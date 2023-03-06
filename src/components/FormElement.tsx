@@ -22,9 +22,18 @@ const FormElement = ({
     }
   };
 
+  const handleRemove = (e: MouseEvent<HTMLSpanElement>) => {
+    e.preventDefault();
+    setValues((values) => {
+      const newValues = new Set(values);
+      newValues.delete(e.currentTarget.innerText);
+      return newValues;
+    });
+  };
+
   return (
     <div>
-      <form className="flex gap-2 items-end" onSubmit={handleAdd}>
+      <div className="flex gap-2 items-end">
         <Input
           clearable
           label={label}
@@ -36,10 +45,10 @@ const FormElement = ({
         <button type="submit" onClick={handleAdd}>
           <MdAddBox size={40} className="mt-auto cursor-pointer" />
         </button>
-      </form>
+      </div>
       <div className="flex mt-2">
         {[...values].map((value) => (
-          <Badge variant="flat" key={value}>
+          <Badge variant="flat" key={value} onClick={handleRemove}>
             {value}
           </Badge>
         ))}
