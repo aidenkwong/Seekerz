@@ -2,7 +2,7 @@ import FormElement from "./FormElement";
 
 const Form = () => {
   return (
-    <form className="grid gap-4 grid-cols-2">
+    <form className="flex flex-col gap-4">
       <FormElement
         label="Keywords in title"
         placeholder="software, developer, nurse, physician, ..."

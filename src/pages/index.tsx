@@ -16,12 +16,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Text h1 size={64} weight="bold">
-          Seekerz
-        </Text>
-        <Text h2 size={32} weight="bold">
-          A more customizable job search tool.
-        </Text>
+        <div>
+          <Text h1 size={64} weight="bold">
+            Seekerz
+          </Text>
+          <Text h2 size={32} weight="bold">
+            A more customizable job search tool.
+          </Text>
+        </div>
+
         <Form />
       </main>
     </>
